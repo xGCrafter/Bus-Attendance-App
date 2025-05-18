@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Attendance - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #f3f4f6, #e5e7eb);
+            font-family: 'Inter', sans-serif;
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        .btn {
+            transition: transform 0.2s, background-color 0.3s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-md fade-in">
+        <div class="flex justify-center mb-6">
+            <img src="assets/deens-logo.png" alt="Deens Logo" class="h-16">
+        </div>
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Bus Attendance Login</h1>
+        <form id="login-form" class="space-y-4">
+            <div>
+                <label for="bus-id" class="block text-gray-700 font-medium mb-1">Bus ID</label>
+                <input type="text" id="bus-id" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <div>
+                <label for="password" class="block text-gray-700 font-medium mb-1">Password</label>
+                <input type="password" id="password" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded-lg font-semibold btn">Login</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

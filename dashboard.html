@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Attendance - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #f3f4f6, #e5e7eb);
+            font-family: 'Inter', sans-serif;
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        .btn {
+            transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .settings-menu {
+            transition: opacity 0.3s, transform 0.3s;
+            transform-origin: top right;
+        }
+        .settings-menu.hidden {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        #settings-btn {
+            font-size: 1.5rem;
+        }
+        .call-school-btn {
+            background-color: #0d9488 !important;
+            color: #ffffff !important;
+        }
+        .call-school-btn:hover {
+            background-color: #0f766e !important;
+        }
+        header {
+            position: relative;
+        }
+        .settings-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        @media (max-width: 640px) {
+            .settings-menu {
+                width: 256px;
+            }
+            .settings-menu .text-gray-700 {
+                font-size: 1.125rem;
+                padding: 0.75rem 1rem;
+            }
+            .settings-menu select {
+                font-size: 1.125rem;
+                padding: 0.75rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div id="dashboard-container" class="p-6 md:p-8 fade-in">
+        <header class="flex flex-col md:flex-row justify-between items-center mb-8">
+            <div class="flex items-center mb-4 md:mb-0">
+                <img src="assets/deens-logo.png" alt="Deens Logo" class="h-12 mr-4">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-800">Bus Attendance Dashboard</h1>
+            </div>
+            <div class="settings-container">
+                <div class="relative">
+                    <button id="settings-btn" class="text-gray-600 hover:text-gray-800 focus:outline-none">⚙️</button>
+                    <div id="settings-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-2 z-10 settings-menu">
+                        <div class="px-4 py-2 text-sm font-medium text-gray-700 border-b">Language</div>
+                        <select id="language" class="w-full px-4 py-2 text-gray-700 bg-transparent focus:outline-none">
+                            <option value="en" class="hover:bg-blue-50">English</option>
+                            <option value="hi" class="hover:bg-blue-50">Hindi</option>
+                            <option value="kn" class="hover:bg-blue-50">Kannada</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <a href="attendance.html" class="bg-blue-600 text-white p-4 rounded-lg text-center text-lg font-semibold btn">Fill Attendance</a>
+            <a href="contact.html" class="bg-green-600 text-white p-4 rounded-lg text-center text-lg font-semibold btn">Contact Parents</a>
+            <a href="https://www.deensacademy.com/" target="_blank" class="bg-purple-600 text-white p-4 rounded-lg text-center text-lg font-semibold btn">School Website</a>
+            <a href="tel:" class="bg-teal-600 text-white p-4 rounded-lg text-center text-lg font-semibold btn call-school-btn">Call School</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
