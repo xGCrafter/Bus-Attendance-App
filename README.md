@@ -3,7 +3,7 @@ A simple web-based attendance management system for school buses. Designed to ma
 
 ---
 
-## 📋Features
+## Features
 
 -  Login system (Bus ID + password authentication)
 -  Monthly Attendance
@@ -21,3 +21,4 @@ cd Bus-Attendance-App
 cd backend
 npm install
 npm start
+
